@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<libraryInfos>
+    <libraryInfo home="/home/caroline/Documentos/java/jre1.8.0_291" version="1.8.0_291">
+        <bootpath>
+            <entry path="/home/caroline/Documentos/java/jre1.8.0_291/lib/resources.jar"/>
+            <entry path="/home/caroline/Documentos/java/jre1.8.0_291/lib/rt.jar"/>
+            <entry path="/home/caroline/Documentos/java/jre1.8.0_291/lib/sunrsasign.jar"/>
+            <entry path="/home/caroline/Documentos/java/jre1.8.0_291/lib/jsse.jar"/>
+            <entry path="/home/caroline/Documentos/java/jre1.8.0_291/lib/jce.jar"/>
+            <entry path="/home/caroline/Documentos/java/jre1.8.0_291/lib/charsets.jar"/>
+            <entry path="/home/caroline/Documentos/java/jre1.8.0_291/lib/jfr.jar"/>
+            <entry path="/home/caroline/Documentos/java/jre1.8.0_291/classes"/>
+        </bootpath>
+        <extensionDirs>
+            <entry path="/home/caroline/Documentos/java/jre1.8.0_291/lib/ext"/>
+            <entry path="/usr/java/packages/lib/ext"/>
+        </extensionDirs>
+        <endorsedDirs>
+            <entry path="/home/caroline/Documentos/java/jre1.8.0_291/lib/endorsed"/>
+        </endorsedDirs>
+    </libraryInfo>
+    <libraryInfo home="/usr/lib/jvm/java-11-openjdk-amd64" version="11.0.11"/>
+</libraryInfos>

@@ -1,0 +1,2 @@
+INDEX VERSION 1.4+/home/caroline/Documentos/workspace/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+2888420943.index
