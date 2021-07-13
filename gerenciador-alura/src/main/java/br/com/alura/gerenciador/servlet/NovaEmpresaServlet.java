@@ -9,25 +9,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class NovaEmpresaServlet
- */
-@WebServlet(urlPatterns = "/novaEmpresa")
+@WebServlet("/novaEmpresa")
 public class NovaEmpresaServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
-	@Override
-	protected void service(HttpServletRequest request, HttpServletResponse response)
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		System.out.println("Cadastrando nova empresa");
 
-		System.out.println("Criando uma nova empresa!");
-
-		String nomeEmpresa = request.getParameter("nomeEmpresa");
+		String nomeEmpresa = request.getParameter("nome");
 
 		PrintWriter out = response.getWriter();
-		out.append("<html><body>").append(nomeEmpresa).append(" cadastrada com sucesso!").append("</body></html>");
-
+		out.println("<html><body>Empresa " + nomeEmpresa + " cadastrada com sucesso!</body></html>");
 	}
 
 }
