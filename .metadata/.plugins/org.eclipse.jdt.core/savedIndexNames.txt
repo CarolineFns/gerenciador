@@ -18,7 +18,6 @@ INDEX VERSION 1.131+/home/caroline/Documentos/workspace/.metadata/.plugins/org.e
 495988200.index
 954861507.index
 2008122299.index
-2888420943.index
 2997138266.index
 3140113807.index
 2075395996.index
