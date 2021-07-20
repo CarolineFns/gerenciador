@@ -13,8 +13,10 @@
 	
 	    <form action="${ linkNovaEmpresaServlet }" method="POST">
 	    	Nome: 
-	    	<input type="text" name="nome">
-	    	<input type="submit">  
+	    	<input type="text" name="nome">  
+	    	Data abertura: 
+	    	<input type="text" name="dataAbertura">
+	    	<input type="submit">
 		</form>
 		
 	</body>

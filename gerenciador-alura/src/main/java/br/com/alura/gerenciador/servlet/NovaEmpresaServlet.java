@@ -1,6 +1,9 @@
 package br.com.alura.gerenciador.servlet;
 
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -16,18 +19,31 @@ public class NovaEmpresaServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		System.out.println("Cadastrando nova empresa");
+		try {
+			System.out.println("Cadastrando nova empresa");
 
-		String nomeEmpresa = request.getParameter("nome");
-		Empresa empresa = new Empresa();
-		empresa.setNome(nomeEmpresa);
+			Empresa empresa = new Empresa();
 
-		Banco banco = new Banco();
-		banco.adiciona(empresa);
+			String nomeEmpresa = request.getParameter("nome");
+			empresa.setNome(nomeEmpresa);
 
-		RequestDispatcher rd = request.getRequestDispatcher("/novaEmpresaCriada.jsp");
-		request.setAttribute("empresa", empresa.getNome());
-		rd.forward(request, response);
+			SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+			String dataAbertura = request.getParameter("dataAbertura");
+
+			empresa.setDataAbertura(formato.parse(dataAbertura));
+
+			Banco banco = new Banco();
+			banco.adiciona(empresa);
+
+			RequestDispatcher rd = request.getRequestDispatcher("/novaEmpresaCriada.jsp");
+			request.setAttribute("empresa", empresa.getNome());
+			request.setAttribute("dataAbertura", empresa.getDataAbertura());
+			rd.forward(request, response);
+
+		} catch (ParseException e) {
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+		}
 	}
 
 }

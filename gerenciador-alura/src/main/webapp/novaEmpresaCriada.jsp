@@ -11,6 +11,8 @@
 	<body>
 		<c:if test="${ not empty empresa }">
 			Empresa ${ empresa } cadastrada com sucesso!
+			<br />
+			Data Abertura: ${ dataAbertura }
 		</c:if>
 		<c:if test="${ empty empresa }">
 			Empresa não cadastrada!
