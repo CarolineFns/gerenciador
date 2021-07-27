@@ -15,6 +15,11 @@ public class Empresa {
 		this.nome = nome;
 	}
 
+	public Empresa(String nome, Integer id) {
+		this.nome = nome;
+		this.id = id;
+	}
+
 	public Integer getId() {
 		return id;
 	}
