@@ -33,6 +33,15 @@ public class Banco {
 		}
 	}
 
+	public Empresa getEmpresaById(Integer id) {
+
+		for (Empresa empresa : lista)
+			if (empresa.getId().equals(id))
+				return empresa;
+
+		return null;
+	}
+
 	public void altera(Empresa empresa) {
 
 		Iterator<Empresa> empresas = lista.iterator();

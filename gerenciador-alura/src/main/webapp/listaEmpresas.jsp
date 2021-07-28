@@ -5,7 +5,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <c:url value="/removerEmpresa" var="linkRemoverEmpresa" />
-<c:url value="/alterarEmpresa" var="linkAlterarEmpresa" />
+<c:url value="/mostrarEmpresa" var="linkMostrarEmpresa" />
 
 <!DOCTYPE html>
 <html>
@@ -14,7 +14,7 @@
 <title>Empresas</title>
 </head>
 <body>
-	<c:if test="${ not empty empresas }">
+	<c:if test="${ not empty empresa }">
 			Empresa ${ empresa } cadastrada com sucesso!
 			<br />
 		<br />
@@ -26,7 +26,7 @@
 				<li>
 					${ empresa.nome }- <fmt:formatDate value="${ empresa.dataAbertura }" pattern="dd/MM/yyy" /> <a
 					href="${ linkRemoverEmpresa }?id=${ empresa.id }">Remover</a> <a
-					href="${ linkEditarEmpresa }?id=${ empresa.id }">Editar</a>
+					href="${ linkMostrarEmpresa }?id=${ empresa.id }">Editar</a>
 				</li>
 			</c:forEach>
 		</ul>
