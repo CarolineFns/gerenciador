@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/listaEmpresas")
+@WebServlet({ "/listaEmpresas", "/empresas" })
 public class ListaEmpresasServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -18,7 +18,7 @@ public class ListaEmpresasServlet extends HttpServlet {
 			throws ServletException, IOException {
 		Banco banco = new Banco();
 		List<Empresa> empresas = banco.getEmpresas();
-		
+
 		request.setAttribute("empresas", empresas);
 
 		RequestDispatcher rd = request.getRequestDispatcher("/listaEmpresas.jsp");
