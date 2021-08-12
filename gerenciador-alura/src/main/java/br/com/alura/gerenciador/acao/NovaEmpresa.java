@@ -13,7 +13,8 @@ import br.com.alura.gerenciador.modelo.Empresa;
 
 public class NovaEmpresa {
 
-	public void executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public String executa(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		try {
 			System.out.println("Cadastrando nova empresa");
 			SimpleDateFormat fmt = new SimpleDateFormat("dd/MM/yyyy");
@@ -25,12 +26,12 @@ public class NovaEmpresa {
 			Banco banco = new Banco();
 			banco.adiciona(empresa);
 
-			response.sendRedirect("entrada?acao=ListaEmpresas");
-
 			// RequestDispatcher rd = request.getRequestDispatcher("/listaEmpresas");
-			// request.setAttribute("empresa", empresa.getNome()); 
+			// request.setAttribute("empresa", empresa.getNome());
 			// request.setAttribute("dataAbertura", empresa.getDataAbertura());
 			// rd.forward(request, response);
+
+			return "redirect:entrada?acao=ListaEmpresas";
 
 		} catch (ParseException e) {
 			System.out.println(e.getMessage());

@@ -13,7 +13,8 @@ import br.com.alura.gerenciador.modelo.Empresa;
 
 public class AlteraEmpresa {
 
-	public void executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public String executa(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		try {
 			System.out.println("Cadastrando nova empresa");
 
@@ -25,7 +26,7 @@ public class AlteraEmpresa {
 			empresa.setNome(request.getParameter("nome"));
 			empresa.setDataAbertura(fmt.parse(request.getParameter("dataAbertura")));
 
-			response.sendRedirect("entrada?acao=ListaEmpresas");
+			return "redirect:entrada?acao=ListaEmpresas";
 
 		} catch (ParseException e) {
 			System.out.println(e.getMessage());
