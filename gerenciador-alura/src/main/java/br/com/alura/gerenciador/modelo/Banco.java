@@ -7,11 +7,15 @@ import java.util.List;
 public class Banco {
 
 	private static List<Empresa> lista = new ArrayList<Empresa>();
+	private static List<Usuario> listaUsuarios = new ArrayList<>();
 	private static Integer sequencial = 1;
 
 	static {
 		lista.add(new Empresa("Alura", sequencial++));
 		lista.add(new Empresa("Caelum", sequencial++));
+
+		listaUsuarios.add(new Usuario("Carol", "12345"));
+		listaUsuarios.add(new Usuario("Rafael", "12345"));
 	}
 
 	public void adiciona(Empresa empresa) {
