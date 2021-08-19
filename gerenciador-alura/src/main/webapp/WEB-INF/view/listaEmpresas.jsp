@@ -13,11 +13,18 @@
 <title>Empresas</title>
 </head>
 <body>
+	<c:if test="${ not empty usuarioLogado }">
+			Usuário Logado: ${ usuarioLogado.login }
+			<br />
+			<br />
+	</c:if>
+
 	<c:if test="${ not empty empresa }">
 			Empresa ${ empresa } cadastrada com sucesso!
 			<br />
 		<br />
 	</c:if>
+	
 	<br /> Lista de Empresas:
 	<c:if test="${ not empty empresas }">
 		<ul>
