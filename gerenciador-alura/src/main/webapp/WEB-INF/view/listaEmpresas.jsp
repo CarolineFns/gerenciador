@@ -14,6 +14,8 @@
 </head>
 <body>
 	<c:if test="${ not empty usuarioLogado }">
+			<c:import url="logout-parcial.jsp"></c:import>
+			
 			Usuário Logado: ${ usuarioLogado.login }
 			<br />
 			<br />
