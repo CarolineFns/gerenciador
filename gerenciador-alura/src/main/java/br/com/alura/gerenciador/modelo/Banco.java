@@ -1,4 +1,4 @@
-package br.com.alura.gerenciador.servlet;
+package br.com.alura.gerenciador.modelo;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -7,11 +7,15 @@ import java.util.List;
 public class Banco {
 
 	private static List<Empresa> lista = new ArrayList<Empresa>();
+	private static List<Usuario> listaUsuarios = new ArrayList<>();
 	private static Integer sequencial = 1;
 
 	static {
 		lista.add(new Empresa("Alura", sequencial++));
 		lista.add(new Empresa("Caelum", sequencial++));
+
+		listaUsuarios.add(new Usuario("Carol", "12345"));
+		listaUsuarios.add(new Usuario("Rafael", "12345"));
 	}
 
 	public void adiciona(Empresa empresa) {
@@ -60,5 +64,13 @@ public class Banco {
 
 	public List<Empresa> getEmpresas() {
 		return Banco.lista;
+	}
+
+	public Usuario existeUsuario(String login, String senha) {
+		for (Usuario usuario : listaUsuarios)
+			if (usuario.ehIgual(login, senha))
+				return usuario;
+
+		return null;
 	}
 }

@@ -1,21 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<c:url value="/novaEmpresa" var="linkNovaEmpresaServlet" />
+<c:url value="/entrada" var="linkEntradaServlet" />
 
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="ISO-8859-1">
-		<title>Nova Empresa</title>
+		<title>Login</title>
 	</head>
 	<body>
 	
-	    <form action="${ linkNovaEmpresaServlet }" method="POST">
-	    	Nome: 
-	    	<input type="text" name="nome">  
-	    	Data abertura: 
-	    	<input type="text" name="dataAbertura">
+	    <form action="${ linkEntradaServlet }" method="POST">
+	    	Login: 
+	    	<input type="text" name="login">  
+	    	Senha:
+	    	<input type="password" name="senha">
+	    	<input type="hidden" name="acao" value="Login">
 	    	<input type="submit">
 		</form>
 		
